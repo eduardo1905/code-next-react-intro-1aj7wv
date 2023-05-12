@@ -15,6 +15,13 @@ export const Events = () => {
     setY(e.clientY - e.target.offsetTop);
   };
 
+  const onMousDown =(e) => {
+    setIsMouseDown(true)
+  };
+  
+  const onMouseUp = () => {
+    setIsMouseDown(false);
+  };
   // TODO: What do you think will happen if you change isMouseDown to true?
   // After you observe what happens, change it back. Update the component
   // so that isMouseDown is true when the mouse is down and false when the

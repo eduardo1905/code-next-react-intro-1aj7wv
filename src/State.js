@@ -12,7 +12,7 @@ export const State = () => {
   );
 };
 
-// TODO: What happens when the button is clicked?
+// TODO: What happens when the button is clicked? it adds a foo
 const State1 = () => {
   const [foos, setFoos] = useState([]);
 
@@ -24,10 +24,10 @@ const State1 = () => {
   return (
     <div>
       State1: {foos.join(', ')}
-
       <br />
-
-      <button className="btn btn-primary" onClick={addFoo}>Add foo</button>
+      <button className="btn btn-primary" onClick={addFoo}>
+        Add foo
+      </button>
     </div>
   );
 };
@@ -36,19 +36,21 @@ const State1 = () => {
 // Why do you think this happens?
 // Fix this component.
 const State2 = () => {
-  let count = 0;
+  let [count, setCount] = useState(0);
 
   const increment = () => {
-    count++;
+    console.log(`count: ${count}`);
+    setCount(count++);
   };
 
   return (
     <div>
       State2: {count}
-
+      {console.log('rendered')}
       <br />
-
-      <button className="btn btn-primary" onClick={increment}>increment</button>
+      <button className="btn btn-primary" onClick={increment}>
+        increment
+      </button>
     </div>
   );
 };
